@@ -1,0 +1,26 @@
+
+server:
+  port: 8080
+
+spring:
+  dataSource:
+    url: jdbc:mysql://localhost:3306/qlp?useunicode=true&characterEncoding=utf8&serverTimezone=UTC
+    username: root
+    password: L123456ns
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+mybatis-plus:
+  global-config:
+    db-config:
+      id-type: auto
+      field-strategy: not_empty
+      #驼峰下划线转换
+      column-underline: true
+      #逻辑删除配置
+      logic-delete-value: 0
+      logic-not-delete-value: 1
+      db-type: mysql
+    refresh: false
+  configuration:
+    map-underscore-to-camel-case: true   #自动转驼峰
+    cache-enabled: false

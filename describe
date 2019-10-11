@@ -1,4 +1,4 @@
-###swagger 整合
+#######################swagger 整合#####################
        主要依赖
        <dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -18,3 +18,44 @@
 		启动application文件中添加@EnableSwagger2标签
 
 		新建config文件@Configuration,设置swaggerUi的展示信息
+
+################################# 整合mybatisplus ########################
+        引入依赖
+        <!--mybatisplus-->
+		<dependency>
+			<groupId>com.baomidou</groupId>
+			<artifactId>mybatis-plus-boot-starter</artifactId>
+			<version>2.3</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.13</version>
+		</dependency>
+
+添加配置信息
+spring:
+  dataSource:
+    url: jdbc:mysql://localhost:3306/qlp?useunicode=true&characterEncoding=utf8&serverTimezone=UTC
+    username: root
+    password: L123456ns
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+mybatis-plus:
+  global-config:
+    db-config:
+      id-type: auto
+      field-strategy: not_empty
+      #驼峰下划线转换
+      column-underline: true
+      #逻辑删除配置
+      logic-delete-value: 0
+      logic-not-delete-value: 1
+      db-type: mysql
+    refresh: false
+  configuration:
+    map-underscore-to-camel-case: true   #自动转驼峰
+    cache-enabled: false
+
