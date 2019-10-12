@@ -59,3 +59,13 @@ mybatis-plus:
     map-underscore-to-camel-case: true   #自动转驼峰
     cache-enabled: false
 
+
+  ********************use表 是 mybatisplus的一些简单的运用**************************
+
+  ****************   userInfo 是 actRecord的简单的运用  *****************************************
+
+  mybatis plus 对原先的mybatis只做增强，不做修改！ 可以使用原先的@Select注解来实现
+
+
+  点击package 打成jar包.在cmd中运行
+  java -jar D:\mybatisplus-0.0.1-SNAPSHOT.jar

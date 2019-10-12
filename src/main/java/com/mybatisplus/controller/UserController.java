@@ -8,6 +8,8 @@ import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Api(tags = "user")
 @RestController
 @RequestMapping(value = "/user")
@@ -51,8 +53,23 @@ public class UserController {
     @GetMapping(value = "/select/{userCode}")
     @ApiOperation(value = "根据code获取用户信息")
     public User selectUserInfoByCode(
-            @ApiParam(value = "用户代码")@PathVariable(value = "userCode")String userCode
+            @ApiParam(value = "用户代码") @PathVariable(value = "userCode") String userCode
     ) {
         return userService.selectByCode(userCode);
+    }
+
+    @PostMapping(value = "/select/list/map")
+    @ApiOperation(value = "通过条件查询列表")
+    public List<User> selectByMap(
+            @RequestBody User user
+    ) {
+        return userService.selectByMap(user);
+    }
+
+    @GetMapping(value = "/select/list/page")
+    @ApiOperation(value = "分页查询")
+    public List<User> selectPage(
+    ) {
+        return userService.selectByPage();
     }
 }
