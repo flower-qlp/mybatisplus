@@ -20,6 +20,7 @@ public class UserController {
 
     @GetMapping(value = "/{id}")
     @ApiOperation(value = "根据ID查询用户信息")
+    @CrossOrigin
     public User selectUserById(
             @ApiParam(value = "用户ID") @PathVariable(value = "id") Long id
     ) {
@@ -28,6 +29,7 @@ public class UserController {
 
     @PostMapping(value = "/create")
     @ApiOperation(value = "创建用户")
+    @CrossOrigin
     public Boolean createUser(
             @RequestBody User user
     ) {
