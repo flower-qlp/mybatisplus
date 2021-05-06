@@ -1,6 +1,6 @@
 
 server:
-  port: 8080
+  port: 8081
 
 spring:
   dataSource:
@@ -14,13 +14,13 @@ mybatis-plus:
     db-config:
       id-type: auto
       field-strategy: not_empty
-      #ÍÕ·åÏÂ»®Ïß×ª»»
+      #é©¼å³°ä¸‹åˆ’çº¿è½¬æ¢
       column-underline: true
-      #Âß¼­É¾³ıÅäÖÃ
+      #é€»è¾‘åˆ é™¤é…ç½®
       logic-delete-value: 0
       logic-not-delete-value: 1
       db-type: mysql
     refresh: false
   configuration:
-    map-underscore-to-camel-case: true   #×Ô¶¯×ªÍÕ·å
+    map-underscore-to-camel-case: true   #è‡ªåŠ¨è½¬é©¼å³°
     cache-enabled: false

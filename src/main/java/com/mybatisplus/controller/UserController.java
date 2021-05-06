@@ -1,5 +1,7 @@
 package com.mybatisplus.controller;
 
+import com.alibaba.fastjson.JSON;
+import com.mybatisplus.bean.TUserInfo;
 import com.mybatisplus.bean.User;
 import com.mybatisplus.service.UserService;
 import io.swagger.annotations.Api;
@@ -25,6 +27,13 @@ public class UserController {
             @ApiParam(value = "用户ID") @PathVariable(value = "id") Long id
     ) {
         return userService.selectById(id);
+    }
+
+    @PostMapping(value = "/check")
+    @CrossOrigin
+    public boolean checkUser(@RequestBody User user) {
+        System.out.println(JSON.toJSONString(user));
+        return true;
     }
 
     @PostMapping(value = "/create")
